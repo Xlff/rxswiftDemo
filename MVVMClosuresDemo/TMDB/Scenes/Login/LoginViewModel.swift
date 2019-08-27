@@ -30,9 +30,13 @@ final class LoginViewModel: ViewModelType {
         let result: Driver<LoginResult>
     }
     
+    struct Dependencies {
+        let api: API
+        let navigator: LoginNavigator
+    }
     
     func transform(input: LoginViewModel.Input) -> LoginViewModel.Output {
-        
+        let isUsernameValid = input.username.map { $0.count > 0}
     }
     
     
