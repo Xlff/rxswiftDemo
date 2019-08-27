@@ -49,9 +49,8 @@ final class API: ApiProvider {
     private func fetchAutToken() -> Observable<String> {
          return provider.rx.request(.auth)
             .filterSuccessfulStatusCodes()
-            .mapString(atKeyPath: "request_token")
+            .map(AuthTokenResponse.self)
             .asObservable()
-            .catchErrorJustReturn("")
-        
+            .map { $0.requestToken }
     }
 }
