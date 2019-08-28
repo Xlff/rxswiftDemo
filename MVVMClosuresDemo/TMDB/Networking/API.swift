@@ -12,7 +12,7 @@ import RxCocoa
 import Moya
 
 struct Constants {
-    static let apiKey = "3f093e78fd47d26523d784196a33f00a"
+    static let apiKey = "e37e45413588184ff74b7e315cbcd6a5"
 }
 
 final class APIKeyPlugs: PluginType {
@@ -22,10 +22,19 @@ final class APIKeyPlugs: PluginType {
         return request
     }
     
+    func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
+        switch result {
+        case .success(let data):
+            print(data)
+        default:
+            print("fail")
+        }
+    }
+
 }
 
 protocol ApiAuthProvider {
-//    func login(withUsername username: String, password: String) -> Observable<Bool>
+    func login(withUsername username: String, password: String) -> Observable<Bool>
 }
 
 protocol ApiProvider: ApiAuthProvider { }
@@ -39,7 +48,8 @@ final class API: ApiProvider {
                 guard let strongSelf = self else {
                     return Observable.just(false)
                 }
-                return strongSelf.provider.rx.request(.login(username, password))
+                print(token)
+                return strongSelf.provider.rx.request(.login(username, password, token))
                     .map(LoginResponse.self)
                     .asObservable()
                     .map { return $0.success }
