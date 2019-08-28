@@ -31,7 +31,7 @@ protocol ApiAuthProvider {
 protocol ApiProvider: ApiAuthProvider { }
 
 final class API: ApiProvider {
-    private var provider = MoyaProvider<APIManager>(plugins: [APIKeyPlugs()])
+    private var provider = MoyaProvider<APIManager>(plugins: [APIKeyPlugs(), NetworkLoggerPlugin()])
 
     func login(withUsername username: String, password: String) -> Observable<Bool> {
         return fetchAutToken()

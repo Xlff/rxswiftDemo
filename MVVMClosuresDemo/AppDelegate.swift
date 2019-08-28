@@ -29,6 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vc = FSOViewController(viewModel: fsoVM)
             window.rootViewController = UINavigationController(rootViewController: vc)
             window.makeKeyAndVisible()
+            
+            let loginNav = UINavigationController()
+            let loginVM = LoginViewModel(dependencies: LoginViewModel.Dependencies(api: API(), navigator: LoginNavigator(nav: loginNav)))
+            let loginViewController = UIStoryboard.main.loginViewController
+            loginViewController.viewModel = loginVM
+            loginNav.viewControllers = [loginViewController]
+            vc.present(loginNav, animated: true, completion: nil)
+            
+            
         }
         return true
     }

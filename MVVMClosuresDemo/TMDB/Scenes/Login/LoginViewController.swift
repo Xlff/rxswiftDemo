@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoginViewControlelr: UIViewController {
+class LoginViewController: UIViewController {
     
     var viewModel: LoginViewModel!
     
@@ -34,9 +34,37 @@ class LoginViewControlelr: UIViewController {
         return .lightContent
     }
     
-    
     private func bindViewModel() {
-    
+        let input = LoginViewModel.Input(username: usernameTextField.rx.text.orEmpty.asDriver(),
+                                         password: passwordTextField.rx.text.orEmpty.asDriver(),
+                                         loginTap: loginButton.rx.tap.asSignal())
+        let output = viewModel.transform(input: input)
+        
+        output.enabled
+            .drive(loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        output.enabled
+            .drive(onNext: { [weak self] enabled in
+                guard let strongSelf = self else { return }
+                strongSelf.loginButton.backgroundColor = enabled ? UIColor(red: 255/255, green: 185/255, blue: 45/255, alpha: 1.0) : UIColor.lightGray
+            })
+            .disposed(by: disposeBag)
+        
+        output.loading
+            .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
+            .disposed(by: disposeBag)
+        
+        output.result
+            .filter { $0 == .failure }
+            .drive(onNext: { [weak self] _ in
+                guard let strongSelf = self else { return }
+                let alert = UIAlertController(title: "Oops!", message: "Login failed", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default) {_ in})
+                strongSelf.present(alert, animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
+    
     
 }

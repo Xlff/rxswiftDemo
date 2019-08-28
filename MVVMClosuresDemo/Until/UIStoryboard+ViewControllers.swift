@@ -16,5 +16,10 @@ extension UIStoryboard {
 
 
 extension UIStoryboard {
-//    var loginViewController: loginv
+    var loginViewController: LoginViewController {
+        guard let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else {
+            fatalError("LoginViewController couldn't be found in Storyboard file")
+        }
+        return vc
+    }
 }
