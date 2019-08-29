@@ -60,7 +60,7 @@ extension APIManager: TargetType {
     var task: Task {
         switch self {
         case .login(_, _, _):
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }

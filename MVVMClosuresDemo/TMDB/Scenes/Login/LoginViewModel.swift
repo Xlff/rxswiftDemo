@@ -58,8 +58,8 @@ final class LoginViewModel: ViewModelType {
                 return self.dependencies.api.login(withUsername: username, password: password)
                     .trackActivity(loadingIndicator)
         }
-            .map { $0 ? LoginResult.success : LoginResult.failure }
-            .asDriver(onErrorJustReturn: .failure)
+            .map { $0 ? LoginResult.success : LoginResult.failure() }
+            .asDriver(onErrorJustReturn: .failure())
             .do(onNext: { [weak self] loginResult in
                 guard loginResult == .success , let strongSelf = self else { return }
                 strongSelf.dependencies.navigator.toMain()

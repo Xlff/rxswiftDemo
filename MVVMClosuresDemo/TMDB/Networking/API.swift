@@ -16,20 +16,6 @@ struct Constants {
 }
 
 final class APIKeyPlugs: PluginType {
-    func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
-        guard let url = request.url else { return request }
-        print(url)
-        return request
-    }
-    
-    func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
-        switch result {
-        case .success(let data):
-            print(data)
-        default:
-            print("fail")
-        }
-    }
 
 }
 
@@ -48,8 +34,8 @@ final class API: ApiProvider {
                 guard let strongSelf = self else {
                     return Observable.just(false)
                 }
-                print(token)
-                return strongSelf.provider.rx.request(.login(username, password, token))
+                return strongSelf.provider.rx
+                    .request(.login(username, password, token))
                     .map(LoginResponse.self)
                     .asObservable()
                     .map { return $0.success }
