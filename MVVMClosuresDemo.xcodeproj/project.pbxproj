@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1BE66E44A631CF44B2A2C7F1 /* Pods_MVVMClosuresDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0CD240C4D8EB0C75A3F6C4 /* Pods_MVVMClosuresDemo.framework */; };
+		1DBDE511231D58F1001309D1 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBDE510231D58F1001309D1 /* DiscoverView.swift */; };
 		5300B053230CEF7D00E97B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5300B052230CEF7D00E97B74 /* AppDelegate.swift */; };
 		5300B055230CEF7D00E97B74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5300B054230CEF7D00E97B74 /* ViewController.swift */; };
 		5300B058230CEF7D00E97B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5300B056230CEF7D00E97B74 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DBDE510231D58F1001309D1 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		2B0CD240C4D8EB0C75A3F6C4 /* Pods_MVVMClosuresDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMClosuresDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5300B04F230CEF7D00E97B74 /* MVVMClosuresDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMClosuresDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5300B052230CEF7D00E97B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DBDE50F231D5749001309D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DBDE510231D58F1001309D1 /* DiscoverView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5300B046230CEF7D00E97B74 = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 		537853BD2317809700AFDDFD /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				1DBDE50F231D5749001309D1 /* View */,
 				537853BE231780AB00AFDDFD /* DiscoverViewController.swift */,
 				537853CC2317B34700AFDDFD /* DoscoverViewModel.swift */,
 				537853C62317821500AFDDFD /* DiscoverNavigator.swift */,
@@ -422,6 +433,7 @@
 				5300B08C230F8C2600E97B74 /* UIStoryboard+ViewControllers.swift in Sources */,
 				537853DB231CF37000AFDDFD /* DetailViewModel.swift in Sources */,
 				5300B097230FC99C00E97B74 /* API.swift in Sources */,
+				1DBDE511231D58F1001309D1 /* DiscoverView.swift in Sources */,
 				537853C92317838000AFDDFD /* DetailNavigator.swift in Sources */,
 				5300B08A230F8B2900E97B74 /* LoginViewController.swift in Sources */,
 				5300B090230F96A900E97B74 /* LoginNavigator.swift in Sources */,

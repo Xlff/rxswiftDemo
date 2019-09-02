@@ -10,6 +10,9 @@ import UIKit
 
 class DiscoverViewController: UIViewController {
     var viewModel: DiscoverViewModel!
+    
+    @IBOutlet weak var carouselsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
