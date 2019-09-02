@@ -22,4 +22,25 @@ extension UIStoryboard {
         }
         return vc
     }
+    
+    var discoverViewController: DiscoverViewController {
+        guard let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "DiscoverViewController") as? DiscoverViewController else {
+            fatalError("DiscoverViewController couldn't be found in Storyboard file")
+        }
+        return vc
+    }
+    
+    var movieDetailViewController: DetailViewController {
+        guard let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+            fatalError("DetailViewController couldn't be found in Storyboard file")
+        }
+        return vc
+    }
+    
+    var searchViewController: SearchViewController {
+        guard let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else {
+            fatalError("SearchViewController couldn't be found in Storyboard file")
+        }
+        return vc
+    }
 }

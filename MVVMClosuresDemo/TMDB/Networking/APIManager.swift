@@ -11,7 +11,17 @@ import Moya
 enum APIManager {
     case login(String, String, String)
     case auth
+    
+    case popularMovies
+    case movieDetail(Int)
+    case searchMovies(String)
+    
+    case popularPeople
+    case searchPeople(String)
+    
+    case popularShows
 }
+
 
 extension APIManager: TargetType {
     var baseURL: URL {
@@ -24,8 +34,20 @@ extension APIManager: TargetType {
             return "/authentication/token/validate_with_login"
         case .auth:
             return "/authentication/token/new"
-        default:
-            return ""
+        case .popularMovies:
+            return "/discover/movie"
+        case .movieDetail(let id):
+            return "/movie/\(id)"
+        case .searchMovies(_):
+            return "/search/movie"
+            
+        case .popularPeople:
+            return "/person/popular"
+            
+        case .popularShows:
+            return "/discover/tv"
+        case .searchPeople(_):
+            return "/search/person"
         }
     }
     
@@ -51,7 +73,32 @@ extension APIManager: TargetType {
                     "password": password,
                     "request_token" : token
                     ]
+        case .popularMovies:
+            return ["language": "en-US",
+                    "sort_by": "popularity.desc",
+                    "include_adult": false,
+                    "include_video": false]
             
+        case .movieDetail(_):
+            return ["language": "en-US"]
+        case .searchMovies(let query):
+            return ["language": "en-US",
+                    "query": query,
+                    "page": "1",
+                    "include": false]
+        case .popularPeople:
+            return ["language": "en-US",
+                    "page": "1"]
+        case .popularShows:
+            return ["language": "en-US",
+                    "page": "1",
+                    "include_null_first_air_dates": false,
+                    "sort_by": "popularity.desc"]
+        case .searchPeople(let query):
+            return ["language": "en-US",
+                    "page": "1",
+                    "include": false,
+                    "query": query]
         default:
             return [:]
         }
@@ -59,10 +106,10 @@ extension APIManager: TargetType {
     
     var task: Task {
         switch self {
-        case .login(_, _, _):
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        default:
+        case .auth:
             return .requestPlain
+        default:
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

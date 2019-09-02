@@ -19,24 +19,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let window = window {
             // ClosuresDemo
-            let viewModel = ReposViewModel(networkingService: NetworkingApi())
-            let viewController = ViewController(viewModel: viewModel)
+//            let viewModel = ReposViewModel(networkingService: NetworkingApi())
+//            let viewController = ViewController(viewModel: viewModel)
+//            
+//            window.rootViewController = UINavigationController(rootViewController: viewController)
+//            
+//            // function Obsere demo
+//            let fsoVM = FSOReposViewModel()
+//            let vc = FSOViewController(viewModel: fsoVM)
+//            window.rootViewController = UINavigationController(rootViewController: vc)
+//            window.makeKeyAndVisible()
+//            
+//            let loginNav = UINavigationController()
+//            let loginVM = LoginViewModel(dependencies: LoginViewModel.Dependencies(api: API(), navigator: LoginNavigator(nav: loginNav)))
+//            let loginViewController = UIStoryboard.main.loginViewController
+//            loginViewController.viewModel = loginVM
+//            loginNav.viewControllers = [loginViewController]
+//            vc.present(loginNav, animated: true, completion: nil)
             
-            window.rootViewController = UINavigationController(rootViewController: viewController)
-            
-            // function Obsere demo
-            let fsoVM = FSOReposViewModel()
-            let vc = FSOViewController(viewModel: fsoVM)
-            window.rootViewController = UINavigationController(rootViewController: vc)
-            window.makeKeyAndVisible()
-            
-            let loginNav = UINavigationController()
-            let loginVM = LoginViewModel(dependencies: LoginViewModel.Dependencies(api: API(), navigator: LoginNavigator(nav: loginNav)))
-            let loginViewController = UIStoryboard.main.loginViewController
-            loginViewController.viewModel = loginVM
-            loginNav.viewControllers = [loginViewController]
-            vc.present(loginNav, animated: true, completion: nil)
-            
+            App.shared.startInterface(in: window)
             
         }
         return true

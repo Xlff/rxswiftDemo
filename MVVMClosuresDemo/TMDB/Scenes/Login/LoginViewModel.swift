@@ -34,7 +34,6 @@ final class LoginViewModel: ViewModelType {
         let api: API
         let navigator: LoginNavigator
     }
-    
     private let dependencies : Dependencies
     init(dependencies: Dependencies) {
         self.dependencies = dependencies

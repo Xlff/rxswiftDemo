@@ -19,3 +19,15 @@ struct AuthTokenResponse: Decodable {
         case requestToken = "request_token"
     }
 }
+
+struct MovieResponse: Decodable {
+    let results: [Movie]
+}
+
+struct PeopleResponse: Decodable {
+    let results: [Person]
+}
+
+struct ShowsResponse: Decodable {
+    let results: [Show]
+}
