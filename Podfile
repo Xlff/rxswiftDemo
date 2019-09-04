@@ -10,5 +10,5 @@ target 'MVVMClosuresDemo' do
 	pod 'RxCocoa'
     pod 'Kingfisher'
     pod 'Moya/RxSwift', '~> 14.0.0-alpha.1'
-#    pod 'Moya'
+    pod 'SnapKit'
 end
