@@ -19,12 +19,17 @@ class MovieCell: UICollectionViewCell {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.contentMode = .center
+        label.textColor = UIColor(r: 106, g: 106, b: 106)
         return label
     }()
     
     lazy var  subtitleLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.contentMode = .center
+        label.textColor = UIColor(r: 106, g: 106, b: 106)
         return label
     }()
     
@@ -40,6 +45,21 @@ class MovieCell: UICollectionViewCell {
             make.width.equalTo(100)
             make.centerX.equalToSuperview()
         }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(8)
+            make.centerX.equalToSuperview()
+        }
+        
+        subtitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(4)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-8)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private struct Constants {

@@ -11,6 +11,7 @@
 		1D8FC444231FFCF700DDDEE7 /* CarouselSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FC443231FFCF700DDDEE7 /* CarouselSectionCell.swift */; };
 		1D8FC4462320081700DDDEE7 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FC4452320081700DDDEE7 /* MovieCell.swift */; };
 		1DBDE511231D58F1001309D1 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBDE510231D58F1001309D1 /* DiscoverView.swift */; };
+		1DF6263823214A30009E83EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6263723214A30009E83EC /* Extensions.swift */; };
 		5300B053230CEF7D00E97B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5300B052230CEF7D00E97B74 /* AppDelegate.swift */; };
 		5300B055230CEF7D00E97B74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5300B054230CEF7D00E97B74 /* ViewController.swift */; };
 		5300B058230CEF7D00E97B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5300B056230CEF7D00E97B74 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		1D8FC443231FFCF700DDDEE7 /* CarouselSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSectionCell.swift; sourceTree = "<group>"; };
 		1D8FC4452320081700DDDEE7 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		1DBDE510231D58F1001309D1 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		1DF6263723214A30009E83EC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2B0CD240C4D8EB0C75A3F6C4 /* Pods_MVVMClosuresDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMClosuresDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5300B04F230CEF7D00E97B74 /* MVVMClosuresDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMClosuresDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5300B052230CEF7D00E97B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				5300B07A230D43BF00E97B74 /* ViewModelType.swift */,
 				5300B07C230D450500E97B74 /* ActivityIndicator.swift */,
 				5300B08B230F8C2600E97B74 /* UIStoryboard+ViewControllers.swift */,
+				1DF6263723214A30009E83EC /* Extensions.swift */,
 			);
 			path = Until;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				5300B053230CEF7D00E97B74 /* AppDelegate.swift in Sources */,
 				537853D7231CB44B00AFDDFD /* Show.swift in Sources */,
 				5300B071230D332D00E97B74 /* FSONetworkingService.swift in Sources */,
+				1DF6263823214A30009E83EC /* Extensions.swift in Sources */,
 				5300B079230D431600E97B74 /* UIViewController+Rx.swift in Sources */,
 				537853D3231CB36A00AFDDFD /* Movie.swift in Sources */,
 				5300B08C230F8C2600E97B74 /* UIStoryboard+ViewControllers.swift in Sources */,
