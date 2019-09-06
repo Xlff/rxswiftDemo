@@ -17,40 +17,39 @@ final class CarouselSectionCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = UIColor(r: 18, g: 18, b: 18)
         view.contentMode = .scaleToFill
-        view.addSubview(self.titleLabel)
-        view.addSubview(self.subtitleLabel)
-        self.titleLabel.snp.makeConstraints({ make in
+        view.addSubview(titleLabel)
+        view.addSubview(subtitleLabel)
+        titleLabel.snp.makeConstraints({ make in
             make.top.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
         })
         
-        self.subtitleLabel.snp.makeConstraints({ make in
+        subtitleLabel.snp.makeConstraints({ make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(4)
             make.left.right.equalTo(self.titleLabel)
         })
         return view
     }()
     
-    var titleLabel: UILabel {
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 30)
         return label
-
-    }
+    }()
     
-    var subtitleLabel: UILabel {
+    lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .init(r: 108, g: 108, b: 108)
         label.font = .systemFont(ofSize: 14)
         return label
-    }
+    }()
     
-    var collectionView: UICollectionView {
+    lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(MovieCell.self, forCellWithReuseIdentifier: String(describing: MovieCell.self))
         return collectionView
-    }
+    }()
     
     
     lazy var layout: UICollectionViewFlowLayout = {
@@ -89,10 +88,10 @@ extension CarouselSectionCell {
         set { collectionView.contentOffset.x = newValue }
     }
     
-    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UISearchControllerDelegate>(_ dataSourceDelegate: D, forRow row: Int) {
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow row: Int) {
     
         collectionView.dataSource = dataSourceDelegate
-        collectionView.delegate = dataSourceDelegate as? UICollectionViewDelegate
+        collectionView.delegate = dataSourceDelegate 
         collectionView.tag = row
         collectionView.setContentOffset(collectionView.contentOffset, animated: false)
         collectionView.reloadData()

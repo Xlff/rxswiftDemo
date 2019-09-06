@@ -77,6 +77,7 @@ class MovieCell: UICollectionViewCell {
         let size = sizingCell.contentView.systemLayoutSizeFitting(fittingSize,
                                                                   withHorizontalFittingPriority: .required,
                                                                   verticalFittingPriority: .defaultLow)
+        print(min(size.height, Constants.maxHeight))
         return min(size.height, Constants.maxHeight)
     }
 }
