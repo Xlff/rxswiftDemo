@@ -72,7 +72,7 @@ final class CarouselSectionCell: UITableViewCell {
         }
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(topView.snp.bottom)
-            make.height.equalTo(MovieCell.height(forWidth: 140))
+            make.height.equalTo(250)
             make.right.bottom.left.equalToSuperview()
         }
     }

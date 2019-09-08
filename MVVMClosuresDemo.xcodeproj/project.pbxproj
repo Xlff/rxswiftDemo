@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1BE66E44A631CF44B2A2C7F1 /* Pods_MVVMClosuresDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0CD240C4D8EB0C75A3F6C4 /* Pods_MVVMClosuresDemo.framework */; };
+		1D50BF8A2323F600005CBD5C /* MovieDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50BF892323F600005CBD5C /* MovieDetailHeaderView.swift */; };
 		1D8FC444231FFCF700DDDEE7 /* CarouselSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FC443231FFCF700DDDEE7 /* CarouselSectionCell.swift */; };
 		1D8FC4462320081700DDDEE7 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8FC4452320081700DDDEE7 /* MovieCell.swift */; };
 		1DBDE511231D58F1001309D1 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBDE510231D58F1001309D1 /* DiscoverView.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D50BF892323F600005CBD5C /* MovieDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailHeaderView.swift; sourceTree = "<group>"; };
 		1D8FC443231FFCF700DDDEE7 /* CarouselSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSectionCell.swift; sourceTree = "<group>"; };
 		1D8FC4452320081700DDDEE7 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		1DBDE510231D58F1001309D1 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
@@ -118,12 +120,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1DBDE50F231D5749001309D1 /* View */ = {
+		1D50BF872323F5DC005CBD5C /* Discover */ = {
 			isa = PBXGroup;
 			children = (
 				1DBDE510231D58F1001309D1 /* DiscoverView.swift */,
 				1D8FC443231FFCF700DDDEE7 /* CarouselSectionCell.swift */,
 				1D8FC4452320081700DDDEE7 /* MovieCell.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		1D50BF882323F5EF005CBD5C /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1D50BF892323F600005CBD5C /* MovieDetailHeaderView.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		1DBDE50F231D5749001309D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D50BF882323F5EF005CBD5C /* MovieDetail */,
+				1D50BF872323F5DC005CBD5C /* Discover */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,6 +459,7 @@
 				5300B084230E3DD300E97B74 /* FSOViewController.swift in Sources */,
 				5300B053230CEF7D00E97B74 /* AppDelegate.swift in Sources */,
 				537853D7231CB44B00AFDDFD /* Show.swift in Sources */,
+				1D50BF8A2323F600005CBD5C /* MovieDetailHeaderView.swift in Sources */,
 				5300B071230D332D00E97B74 /* FSONetworkingService.swift in Sources */,
 				1DF6263823214A30009E83EC /* Extensions.swift in Sources */,
 				5300B079230D431600E97B74 /* UIViewController+Rx.swift in Sources */,

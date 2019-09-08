@@ -105,8 +105,15 @@ extension DiscoverView: UICollectionViewDataSource {
         let item = data[collectionView.tag].items[indexPath.item]
         cell.titleLabel.text = item.title
         cell.subtitleLabel.text = item.subtitle
-        if let url = item.imageUrl {
-            cell.imageView.kf.setImage(with: URL(string: url))
+        if let urlString = item.imageUrl, let url = URL(string: urlString) {
+            cell.imageView.kf.setImage(with: url, placeholder: UIImage(named: "sample")) { result in
+                switch result {
+                case .success(let value):
+                    print("/n/n Task done for: \(value.source.url?.absoluteString ?? "")")
+                case .failure(let error):
+                    print("/n/n Job failed: \(error.localizedDescription)")
+                }
+            }
         }
         return cell
     }
