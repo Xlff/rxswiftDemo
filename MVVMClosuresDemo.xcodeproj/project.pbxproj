@@ -53,6 +53,7 @@
 		537853D9231CB46B00AFDDFD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537853D8231CB46B00AFDDFD /* Person.swift */; };
 		537853DB231CF37000AFDDFD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537853DA231CF37000AFDDFD /* DetailViewModel.swift */; };
 		537853DD231D02AC00AFDDFD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537853DC231D02AC00AFDDFD /* SearchViewModel.swift */; };
+		53D0480C2327A0B000470433 /* SearhCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0480B2327A0B000470433 /* SearhCell.swift */; };
 		53DC84DC232603580052A436 /* MovieDetailTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC84DB232603580052A436 /* MovieDetailTipsView.swift */; };
 		53DC84DE23263BB40052A436 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC84DD23263BB40052A436 /* GradientImageView.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		537853D8231CB46B00AFDDFD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		537853DA231CF37000AFDDFD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		537853DC231D02AC00AFDDFD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		53D0480B2327A0B000470433 /* SearhCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearhCell.swift; sourceTree = "<group>"; };
 		53DC84DB232603580052A436 /* MovieDetailTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTipsView.swift; sourceTree = "<group>"; };
 		53DC84DD23263BB40052A436 /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 		AE12BC451C7E2E4795A86071 /* Pods-MVVMClosuresDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMClosuresDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMClosuresDemo/Pods-MVVMClosuresDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		1DBDE50F231D5749001309D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53D0480A2327A09700470433 /* Search */,
 				1D50BF882323F5EF005CBD5C /* MovieDetail */,
 				1D50BF872323F5DC005CBD5C /* Discover */,
 			);
@@ -291,6 +294,14 @@
 				537853D8231CB46B00AFDDFD /* Person.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		53D0480A2327A09700470433 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				53D0480B2327A0B000470433 /* SearhCell.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		E0E3B0F178C8E4E438DE5AE6 /* Pods */ = {
@@ -447,6 +458,7 @@
 				537853C1231780B600AFDDFD /* DetailViewController.swift in Sources */,
 				5300B080230D4C1C00E97B74 /* FSOReposViewModel.swift in Sources */,
 				537853DD231D02AC00AFDDFD /* SearchViewModel.swift in Sources */,
+				53D0480C2327A0B000470433 /* SearhCell.swift in Sources */,
 				537853CD2317B34700AFDDFD /* DoscoverViewModel.swift in Sources */,
 				537853C72317821500AFDDFD /* DiscoverNavigator.swift in Sources */,
 				537853D9231CB46B00AFDDFD /* Person.swift in Sources */,
