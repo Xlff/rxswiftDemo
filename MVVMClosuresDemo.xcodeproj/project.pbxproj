@@ -53,6 +53,8 @@
 		537853D9231CB46B00AFDDFD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537853D8231CB46B00AFDDFD /* Person.swift */; };
 		537853DB231CF37000AFDDFD /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537853DA231CF37000AFDDFD /* DetailViewModel.swift */; };
 		537853DD231D02AC00AFDDFD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537853DC231D02AC00AFDDFD /* SearchViewModel.swift */; };
+		53DC84DC232603580052A436 /* MovieDetailTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC84DB232603580052A436 /* MovieDetailTipsView.swift */; };
+		53DC84DE23263BB40052A436 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC84DD23263BB40052A436 /* GradientImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,8 @@
 		537853D8231CB46B00AFDDFD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		537853DA231CF37000AFDDFD /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		537853DC231D02AC00AFDDFD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		53DC84DB232603580052A436 /* MovieDetailTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTipsView.swift; sourceTree = "<group>"; };
+		53DC84DD23263BB40052A436 /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
 		AE12BC451C7E2E4795A86071 /* Pods-MVVMClosuresDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMClosuresDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMClosuresDemo/Pods-MVVMClosuresDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E973896A7117B4960013CB9D /* Pods-MVVMClosuresDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMClosuresDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMClosuresDemo/Pods-MVVMClosuresDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				1D50BF892323F600005CBD5C /* MovieDetailHeaderView.swift */,
+				53DC84DB232603580052A436 /* MovieDetailTipsView.swift */,
+				53DC84DD23263BB40052A436 /* GradientImageView.swift */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				1D50BF8A2323F600005CBD5C /* MovieDetailHeaderView.swift in Sources */,
 				5300B071230D332D00E97B74 /* FSONetworkingService.swift in Sources */,
 				1DF6263823214A30009E83EC /* Extensions.swift in Sources */,
+				53DC84DE23263BB40052A436 /* GradientImageView.swift in Sources */,
 				5300B079230D431600E97B74 /* UIViewController+Rx.swift in Sources */,
 				537853D3231CB36A00AFDDFD /* Movie.swift in Sources */,
 				5300B08C230F8C2600E97B74 /* UIStoryboard+ViewControllers.swift in Sources */,
@@ -474,6 +481,7 @@
 				537853D5231CB42F00AFDDFD /* Genre.swift in Sources */,
 				5300B07D230D450500E97B74 /* ActivityIndicator.swift in Sources */,
 				5300B093230FBE3D00E97B74 /* APIManager.swift in Sources */,
+				53DC84DC232603580052A436 /* MovieDetailTipsView.swift in Sources */,
 				5300B067230CF0CE00E97B74 /* Repo.swift in Sources */,
 				537853BF231780AB00AFDDFD /* DiscoverViewController.swift in Sources */,
 				5300B08E230F95A700E97B74 /* LoginViewModel.swift in Sources */,

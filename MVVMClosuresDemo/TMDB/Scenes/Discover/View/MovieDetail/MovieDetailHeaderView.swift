@@ -76,7 +76,8 @@ final class MovieDetailHeaderView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setup()
     }
     
     override func layoutSubviews() {
@@ -91,9 +92,42 @@ final class MovieDetailHeaderView: UIView {
             make.left.equalTo(titleLabel)
         }
         genresLabel.snp.makeConstraints { make in
-            make.left.equalTo(titleLabel)
+            make.left.equalToSuperview().offset(20)
             make.top.equalTo(releaseDateLabel.snp.bottom).offset(40)
-            
+        }
+        leftDotView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 3, height: 3))
+            make.left.equalTo(genresLabel.snp.right).offset(12)
+            make.centerY.equalTo(genresLabel)
+        }
+        runtimeLabel.snp.makeConstraints { make in
+            make.left.equalTo(leftDotView.snp.right).offset(12)
+            make.centerY.equalTo(genresLabel)
+        }
+
+        rightDotView.snp.makeConstraints { make in
+            make.size.centerY.equalTo(leftDotView)
+            make.left.equalTo(runtimeLabel.snp.right).offset(9.5)
+        }
+        starIconView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 15, height: 15))
+            make.centerY.equalTo(genresLabel)
+            make.left.equalTo(rightDotView.snp.right).offset(12)
+        }
+        voteAverageLabel.snp.makeConstraints { make in
+            make.left.equalTo(starIconView.snp.right).offset(12)
+            make.centerY.equalTo(genresLabel)
+        }
+
+        overViewTitleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.top.equalTo(genresLabel.snp.bottom).offset(40)
+        }
+        overViewContentLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.top.equalTo(overViewTitleLabel.snp.bottom).offset(8)
+            make.right.equalToSuperview().offset(-20)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-40)
         }
     }
     
@@ -102,13 +136,37 @@ final class MovieDetailHeaderView: UIView {
         addSubview(releaseDateLabel)
         addSubview(genresLabel)
         addSubview(overViewTitleLabel)
+        addSubview(overViewContentLabel)
         addSubview(runtimeLabel)
         addSubview(voteAverageLabel)
-        addSubview(overViewContentLabel)
         addSubview(leftDotView)
         addSubview(rightDotView)
         addSubview(starIconView)
 
     }
     
+    func configure(withTitle title: String,
+                   releaseDate: String,
+                   genres: String,
+                   runtime: String,
+                   voteAverage: String,
+                   overview: String) {
+        titleLabel.text = title
+        releaseDateLabel.text = releaseDate
+        genresLabel.text = genres
+        runtimeLabel.text = runtime
+        voteAverageLabel.text = voteAverage
+        overViewContentLabel.text = overview
+    }
+}
+
+extension MovieDetailHeaderView {
+    func configure(with data: MovieDetailData) {
+        configure(withTitle: data.title,
+                  releaseDate: data.releaseDate,
+                  genres: data.genres,
+                  runtime: data.runtime,
+                  voteAverage: data.voteAverage,
+                  overview: data.overview)
+    }
 }
