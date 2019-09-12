@@ -16,7 +16,9 @@ struct Constants {
 }
 
 final class APIKeyPlugs: PluginType {
-
+    func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+        return request
+    }
 }
 
 protocol ApiAuthProvider {
@@ -86,6 +88,7 @@ final class API: ApiProvider {
             .map(MovieResponse.self)
             .map { $0.results }
             .asObservable()
+            .catchErrorJustReturn(nil)
     }
     
     //MARK: People

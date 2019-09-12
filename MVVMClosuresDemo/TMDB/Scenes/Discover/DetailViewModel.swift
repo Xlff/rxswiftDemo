@@ -46,7 +46,7 @@ final class DetailViewModel: ViewModelType {
             .do(onNext: { [weak self] _ in
                 guard let strongSelf = self else { return }
                 strongSelf.dependencies.navigator.goBack()
-            })
+             })
         
         return Output(data: data,
                       back: back)

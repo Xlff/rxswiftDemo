@@ -46,7 +46,11 @@ class DetailViewController: UIViewController {
                 }
                 
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
+        
+        output.back
+            .drive()
+            .disposed(by: disposeBag)
     }
 
 

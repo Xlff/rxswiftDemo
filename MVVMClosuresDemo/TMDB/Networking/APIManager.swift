@@ -66,13 +66,14 @@ extension APIManager: TargetType {
     
     
     var parameters: [String: Any] {
+        var params = [String: Any]()
         
         switch self {
         case .login(let username, let password, let token):
-            return ["username": username,
-                    "password": password,
-                    "request_token" : token
-                    ]
+            params["username"] = username
+            params["password"] = password
+            params["request_token"] = token
+
         case .popularMovies:
             return ["language": "en-US",
                     "sort_by": "popularity.desc",
@@ -82,13 +83,10 @@ extension APIManager: TargetType {
         case .movieDetail(_):
             return ["language": "en-US"]
         case .searchMovies(let query):
-            return ["language": "en-US",
-                    "query": query,
-                    "page": "1",
-                    "include": false]
+            params["query"] = query
+            params["page"] = 1
         case .popularPeople:
-            return ["language": "en-US",
-                    "page": "1"]
+            params["page"] = 2
         case .popularShows:
             return ["language": "en-US",
                     "page": "1",
@@ -100,16 +98,21 @@ extension APIManager: TargetType {
                     "include": false,
                     "query": query]
         default:
-            return [:]
+            return params
         }
+        return params
     }
     
     var task: Task {
         switch self {
         case .auth:
             return .requestPlain
-        default:
+            
+        case .login(_, _, _):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
+        default:
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }
     

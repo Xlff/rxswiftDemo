@@ -13,6 +13,7 @@ class SearhCell: UITableViewCell {
     
     lazy var titleImageView: UIImageView = {
         let imageView = UIImageView()
+//        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -30,6 +31,15 @@ class SearhCell: UITableViewCell {
         return label
     }()
 
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
     
     func setup() {
         contentView.addSubview(titleImageView)
@@ -38,7 +48,7 @@ class SearhCell: UITableViewCell {
         
         titleImageView.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 74, height: 74))
-            make.top.left.equalToSuperview()
+            make.top.left.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
         }
         titleLabel.snp.makeConstraints { make in
